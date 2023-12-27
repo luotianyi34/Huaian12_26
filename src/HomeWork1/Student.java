@@ -1,6 +1,6 @@
-package demo;
+package HomeWork1;
 
-public class Student {
+public class Student implements Comparable<Student>{
     private String name;
     private int age;
 
@@ -31,5 +31,14 @@ public class Student {
                 "name='" + name + '\'' +
                 ", age=" + age +
                 '}';
+    }
+    @Override
+    public int compareTo(Student o) {
+        // 以年龄为主要条件，以姓名为次要条件进行比较
+        if (this.age != o.age) {
+            return this.age - o.age;
+        } else {
+            return this.name.compareTo(o.name);
+        }
     }
 }
